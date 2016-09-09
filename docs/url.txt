@@ -1,0 +1,19 @@
+Active MQ Admin url:
+localhost:8161/admin/
+
+DErby db:
+ij tool
+to connect to ij tool:
+C:\Users\u268407\C3P_Workspace\c3p\Softwares\db-derby-10.12.1.1-bin\bin\ij
+to connect to DB : CONNECT 'jdbc:derby:mydb;create=true';
+CONNECT 'jdbc:derby://localhost/C:/Users/u268407/C3P_Workspace/c3p/Softwares/db-derby-10.12.1.1-bin/giftkart_db1';
+//CONNECT 'jdbc:derby:giftkart_db1;user=derby;password=secret;create=true';
+to disconnect: disconnect;
+
+set schema:
+set schema derby;
+default schema : username
+
+userid/pwd: derby/secret
+db: giftkart_db1
+schema: derby
