@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+
+<tiles-definitions>
+
+  <definition name="baselayout" template="/WEB-INF/tiles/baselayout.jsp">
+      <put-attribute name="title"  value="Base Template"/>
+      <put-attribute name="header"   value="/WEB-INF/tiles/header.jsp"/>
+      <put-attribute name="navigation" value="/WEB-INF/tiles/navigation.jsp" />
+      <put-attribute name="body"   	value=""/>
+      <put-attribute name="footer"   value="/WEB-INF/tiles/footer.jsp"/>
+  </definition>
+  
+  <definition name="adminlayout" template="/WEB-INF/tiles/baselayout.jsp">
+      <put-attribute name="title"  value="Base Template"/>
+      <put-attribute name="header"   value="/WEB-INF/tiles/header.jsp"/>
+      <put-attribute name="navigation" value="/WEB-INF/tiles/adminNavigation.jsp" />
+      <put-attribute name="body"   	value=""/>
+      <put-attribute name="footer"   value="/WEB-INF/tiles/footer.jsp"/>
+  </definition>
+ 
+<definition extends="adminlayout" name="adminlogin">
+ 	<put-attribute name="title" value="GiftKart : admin Login" />
+ 	<put-attribute name="navigation" value="" />
+  	<put-attribute name="body" value="/WEB-INF/views/admin.jsp" />
+ </definition>
+ 
+ <definition extends="adminlayout" name="adminhome">
+ 	<put-attribute name="title" value="GiftKart : admin" />
+  	<put-attribute name="body" value="/WEB-INF/views/adminhome.jsp" />
+ </definition>
+ 
+ <definition extends="adminlayout" name="addproduct">
+ 	<put-attribute name="title" value="GiftKart : add Product" />
+  	<put-attribute name="body" value="/WEB-INF/views/addProduct.jsp" />
+ </definition>
+ 
+ <definition extends="adminlayout" name="recharge">
+ 	<put-attribute name="title" value="GiftKart : Admin Recharge Page" />
+  	<put-attribute name="body" value="/WEB-INF/views/recharge.jsp" />
+ </definition>
+ 
+ <definition extends="adminlayout" name="users">
+ 	<put-attribute name="title" value="GiftKart : Users" />
+  	<put-attribute name="body" value="/WEB-INF/views/user.jsp" />
+ </definition>
+ 
+ <definition extends="adminlayout" name="adminsuccess">
+ 	<put-attribute name="title" value="GiftKart : Admin Success Page" />
+  	<put-attribute name="body" value="/WEB-INF/views/adminsuccess.jsp" />
+ </definition>
+ 
+   <definition extends="adminlayout" name="adminerror">
+ 	<put-attribute name="title" value="GiftKart : Admin Error Page" />
+  	<put-attribute name="body" value="/WEB-INF/views/adminerror.jsp" />
+ </definition>
+ 
+  <definition extends="baselayout" name="userlogin">
+ 	<put-attribute name="title" value="GiftKart : Login" />
+ 	<put-attribute name="navigation" value="" />
+  	<put-attribute name="body" value="/WEB-INF/views/userlogin.jsp" />
+ </definition>
+ 
+<definition extends="baselayout" name="registration">
+ 	<put-attribute name="title" value="GiftKart : Registration" />
+ 	<put-attribute name="navigation" value="" />
+  	<put-attribute name="body" value="/WEB-INF/views/Registration.jsp" />
+ </definition>
+ 
+  <definition extends="baselayout" name="home">
+ 	<put-attribute name="title" value="GiftKart : Welcome" />
+  	<put-attribute name="body" value="/WEB-INF/views/home.jsp" />
+ </definition>
+ 
+   <definition extends="baselayout" name="products">
+ 	<put-attribute name="title" value="GiftKart : All products" />
+  	<put-attribute name="body" value="/WEB-INF/views/products.jsp" />
+ </definition>
+ 
+   <definition extends="baselayout" name="orders">
+ 	<put-attribute name="title" value="GiftKart : All Orders" />
+  	<put-attribute name="body" value="/WEB-INF/views/orders.jsp" />
+ </definition>
+ 
+  <definition extends="baselayout" name="success">
+ 	<put-attribute name="title" value="GiftKart : Success Page" />
+  	<put-attribute name="body" value="/WEB-INF/views/success.jsp" />
+ </definition>
+ 
+   <definition extends="baselayout" name="error">
+ 	<put-attribute name="title" value="GiftKart : Error Page" />
+  	<put-attribute name="body" value="/WEB-INF/views/error.jsp" />
+ </definition>
+ 
+</tiles-definitions>

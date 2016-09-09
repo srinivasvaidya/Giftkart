@@ -1,0 +1,23 @@
+<?xml version = "1.0" encoding = "UTF-8"?>     
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+	   
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">org.apache.derby.jdbc.ClientDriver</property>
+        <property name="hibernate.connection.url">jdbc:derby://localhost/C:/Users/u268407/C3P_Workspace/c3p/Softwares/db-derby-10.12.1.1-bin/giftkart_db1</property>
+        <property name="hibernate.connection.username">derby</property>
+        <property name="hibernate.connection.password">secret</property>
+        
+        
+        <property name="hibernate.dialect">org.hibernate.dialect.DerbyDialect</property>
+        <property name="show_sql">true</property>
+      <!--   <property name="hbm2ddl.auto">update</property> -->
+        <mapping class="com.wells.giftkart.valueobject.Product"></mapping>
+		<mapping class="com.wells.giftkart.valueobject.ProductCategory"></mapping>
+		<mapping class="com.wells.giftkart.valueobject.User"></mapping>
+		<mapping class="com.wells.giftkart.valueobject.Account"></mapping>
+		<mapping class="com.wells.giftkart.valueobject.Address"></mapping>
+    </session-factory>
+</hibernate-configuration>
