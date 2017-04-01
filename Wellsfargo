@@ -22,15 +22,15 @@ Roles and responsibilities throughout his employment with this organization were
 •	Involved in developing Server-Side functionality in Java/J2EE.
 •	Played a key role in writing controllers (servlets) for navigation.
 •	Managing development of documentation to meet client expectations.
-•	Testing the feature at module level and unit level using Unit Testing tools like TestNG.
 •	Identifying Regression Test cases from earlier releases and mark them as Automation Candidates.
 •	Responsible for Generating Automation test scripts for the automated test cases identified, using Quick Test Professional (QTP).
+•	Testing the feature at module level and unit level using Unit Testing tools like TestNG.
 •	Running the Automated suite on a regular basis to assess the quality of the – Commercial Card product at regular intervals.
 •	Analyzing performance of – Commercial Card Core Processing (C3P) - application using performance monitoring tools like Rational Performance Tester.
 •	Responsible for running SonarQube and generating report to ensure continuous code quality
+•	Documenting all the vital Project related information like High level Design, Implementation, Testing metrics (test cases / defects) and performance related data.
 •	Diagnosing, troubleshooting and designing solutions to problematic programming.
 •	Providing on call support during upgradation at the site.
-•	Documenting Design Strategy, Test Plan, Performance related data and Defects data and presenting to the stake holders.
 •	Providing the root cause analysis for every problem and incident in Production system.
 •	Conducting retrospectives to find out System and/or Technology limitations and coming up with solutions to overcome those on a regular basis.
 •	Mentoring and guiding new recruits.
