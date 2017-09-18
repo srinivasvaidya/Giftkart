@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/security
+		http://www.springframework.org/schema/security/spring-security.xsd">
+	
+	<http auto-config="true" use-expressions="true">
+		<intercept-url pattern="/adminhome*" access="hasRole('ROLE_ADMIN')"/>
+		<intercept-url pattern="/adminlogin" access="permitAll"/>
+		
+		<form-login  login-page="/adminlogin"
+					 default-target-url="/adminhome"
+					authentication-failure-url="/error"
+					/> 
+		<!-- <csrf/>  -->
+	<!-- 	<anonymous username="admin" granted-authority="ROLE_ADMIN"/> -->
+	</http> 
+ 
+ 	<authentication-manager>
+ 		<authentication-provider>
+ 			<user-service >
+ 				<user name="110" password="admin" authorities="ROLE_ADMIN"/>
+ 				<user name="101" password="vaidya" authorities="ROLE_USER"/>
+ 			</user-service>
+ 		</authentication-provider>
+ 	</authentication-manager>  
+ 	
+</beans:beans>        

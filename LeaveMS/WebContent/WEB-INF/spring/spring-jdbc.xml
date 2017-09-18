@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:policy="http://schemas.xmlsoap.org/ws/2004/09/policy"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	 http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/util 
+		http://www.springframework.org/schema/util/spring-util.xsd
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- <context:property-placeholder
+		ignore-resource-not-found="true"
+		location="classpath:config.properties, file:///apps/codeathon/config/config.properties" /> -->
+
+
+	<!-- <context:component-scan base-package="com.wells.giftkart.dao.Impl" />
+	 -->
+	
+	<!-- <bean id="dataSource class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${db.driverclass}" />
+		<property name="url" value="${db.url}" />
+		<property name="username" value="${db.username}" />
+		<property name="password" value="${db.password}" />
+	</bean> -->
+
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="org.apache.derby.jdbc.ClientDriver" />
+		<property name="url" value="jdbc:derby://localhost/C:/Users/u268407/C3P_Workspace/c3p/Softwares/db-derby-10.12.1.1-bin/giftkart_db1" />
+		<property name="username" value="derby" />
+		<property name="password" value="secret" />
+	</bean>
+
+	<bean id="userdao" class="com.wells.giftkart.dao.Impl.UserDaoImpl">
+	<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	
+	<bean id="productdao" class="com.wells.giftkart.dao.Impl.ProductDaoImpl">
+	<property name="dataSource" ref="dataSource"></property>
+	</bean>
+
+	<bean id="orderdao" class="com.wells.giftkart.dao.Impl.OrderDaoImpl">
+	<property name="dataSource" ref="dataSource"></property>
+	</bean>
+</beans>

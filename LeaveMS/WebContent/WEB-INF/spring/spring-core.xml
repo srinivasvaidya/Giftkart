@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc 
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop
+		http://www.springframework.org/schema/aop/spring-aop.xsd">
+       
+     
+      <!-- <context:component-scan base-package="com.wells.giftkart.service.Impl"></context:component-scan>
+      -->
+  	<bean id="userService" class="com.wells.giftkart.service.Impl.UserService"></bean>   
+      
+ 	 <bean id="prodservice" class="com.wells.giftkart.service.Impl.ProductService"> </bean>
+     
+     <bean id="orderservice" class="com.wells.giftkart.service.Impl.OrderService"></bean>   
+     
+     
+     <bean id="ProductManager" class="com.wells.giftkart.manager.ProductManager"></bean>
+     
+     <bean id="MQManager" class="com.wells.giftkart.manager.MQManager" init-method="init"></bean>
+     
+     <bean id="mqClient" class="com.wells.giftkart.manager.MQClient"></bean>
+     
+     
+     
+      
+   
+	<aop:config>
+		<aop:aspect ref="loggingAspect">
+			<aop:pointcut expression="execution(* com.wells.giftkart.*.*.*(..))" id="timerInterceptor"/>
+			<aop:before method="statTime" pointcut-ref="timerInterceptor"/>
+			<!-- <aop:around method="timer" pointcut-ref="timerInterceptor"/> -->
+		</aop:aspect>
+	</aop:config>
+	
+	<bean id="loggingAspect" class="com.wells.giftkart.aspect.LoggingAspect"></bean> 
+	 
+	
+</beans>        

@@ -1,0 +1,47 @@
+create database lms_db;
+show databases;
+create schema lms_schema;
+
+create table users(userid varchar(20));
+show tables;
+
+CREATE TABLE lms_users (
+		userId	INTEGER NOT NULL,
+		username VARCHAR(50) NOT NULL,
+		password VARCHAR(50),
+		firstname VARCHAR(50),
+		lastname VARCHAR(50),
+		email VARCHAR(50),
+		usertype VARCHAR(50),
+		status VARCHAR(50),
+		totalpaidleaves INTEGER,
+		totalsickleaves INTEGER,
+		usedpaidleaves INTEGER,
+		usedsickleaves INTEGER,
+		constraint useid_pk PRIMARY KEY (userId)
+		);
+		
+alter table lms_users add column (usedsickleaves INTEGER);
+update lms_users set usedsickleaves=0;
+insert into lms_users values(101,'vaidya', 'vaidya', 'srinivas', 'vaidya','srini@gmail.com','employee','created');
+select * from lms_users;
+
+CREATE TABLE lms_leaves (
+		leaveId	INTEGER NOT NULL,
+		leavetype VARCHAR(20),
+		status VARCHAR(20),
+		fromdate date,
+		todate date,
+		leavecount integer,
+		approvedby varchar(50),
+		userId integer, 
+		usertype varchar(50),
+		constraint leaveid_pk PRIMARY KEY (leaveId),
+		constraint userid_fk foreign key (userId) references lms_users(userId)
+		);
+desc lms_leaves;
+drop table lms_leaves;
+alter table lms_leaves add column (usertype varchar(50));
+select * from lms_leaves;
+update lms_leaves set  usertype='employee';
+insert into lms_leaves (approvedby, fromdate, leavecount, leavetype, status, todate,leaveId) values ('', '2017-09-17', 0, '','','2017-09-17', 1)
